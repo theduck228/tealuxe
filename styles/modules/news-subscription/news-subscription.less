@@ -1,0 +1,110 @@
+.main-news{
+  background: url("../images/tea-bg-shade.png") no-repeat @bg-color right;
+  background-size: contain;
+  padding: 100px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin-bottom: 150px;
+  .news-subscription{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    &__container{
+      display: flex;
+      width: 80%;
+      gap: 40px;
+    }
+    &__description{
+      width: 48%;
+      p{
+        font-weight: 300;
+      }
+    }
+    &__form{
+      width: 48%;
+      align-self: end;
+      &-functional{
+        width: 100%;
+        display: flex;
+        gap: 25px;
+        .form__input {
+          width: 80%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid @input;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 150%;
+          font-family: "Open Sans", sans-serif;
+          color: @input;
+          text-indent: 15px;
+
+          &::placeholder {
+            color: @input;
+            font-family: "Open Sans", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 150%;
+            text-indent: 15px;
+          }
+
+          &:focus-visible {
+            border: none !important;
+            border-bottom: 1px solid @input;
+          }
+        }
+      }
+    }
+    &__privacy{
+      display: flex;
+      gap: 5px;
+      input{
+        width: 10px;
+        height: 10px;
+        margin: 17px 0 0 0;
+      }
+    }
+  }
+}
+@media screen and (max-device-width: 1000px){
+  .main-news{
+    padding: 60px 0;
+    margin-bottom: 120px;
+    .news-subscription__container{
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center;
+      .news-subscription__description{
+        text-align: center;
+        width: 100%;
+        p{
+          width: 100%;
+        }
+      }
+      .news-subscription__form{
+        align-self: center;
+        width: 70%;
+      }
+    }
+  }
+}
+@media screen and (max-device-width: 768px){
+  .news-subscription__form{
+    align-self: center;
+    width: 95% !important;
+  }
+}
+@media screen and (max-device-width: 480px){
+  .main-news{
+    margin-bottom: 60px;
+    padding: 50px 0;
+    .news-subscription__container{
+      width: 97%;
+    }
+  }
+}

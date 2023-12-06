@@ -1,0 +1,122 @@
+.main-collections{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 150px;
+  p.quotation{
+    width: 50%;
+    //transform: scale(0);
+    //transition: transform 1s ease-in-out;
+    padding: 120px 0 135px 0;
+  }
+  p.quotation._active{
+    width: 50%;
+    animation: typing 2.5s steps(85, end) forwards;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .collection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    li{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 100%;
+      }
+    }
+    &-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      h2{
+        margin: 0 0 60px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+.collection__item-image{
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 1s ease-in-out;
+}
+.collection__item-image._active{
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 1s ease-in-out;
+}
+.collection__item-header{
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 1s ease-in;
+}
+.collection__item-header._active{
+  transform: scaleY(1);
+  transform-origin: top center;
+  transition: transform 1s ease-out;
+}
+
+@media screen and (max-device-width: 1300px){
+  .collection {
+    justify-content: center !important;
+  }
+  .collection-container{
+    width: 97% !important;
+  }
+}
+@media screen and (max-device-width: 1000px){
+  .main-collections{
+    width: 100%;
+    padding-bottom: 120px;
+    p.quotation{
+      width: 80%;
+      padding: 120px 0 135px 0;
+    }
+    .collection{
+      justify-content: center;
+      width: 100%;
+      flex-wrap: wrap;
+      &-container{
+        width: 97%;
+        h2{
+          margin: 0 0 60px 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-device-width: 768px){
+  .main-collections {
+    width: 100%;
+    padding-bottom: 80px;
+
+    p.quotation {
+      width: 50%;
+      font-size: 16px;
+      padding: 60px 0;
+    }
+  }
+}
+@media screen and (max-device-width: 360px){
+  .collection-container{
+    h2{
+      font-size: 24px;
+      margin: 0 !important;
+    }
+  }
+  .collection{
+
+  }
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
